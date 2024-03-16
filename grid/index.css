@@ -1,0 +1,62 @@
+/*
+Definitions:
+    Inline direction: For english pages, this means rightward.
+    Block direction: For english pages, this means downward.
+*/
+
+body {
+    display: grid;
+    row-gap: 0.2rem;
+    column-gap: 0.5rem;
+    /* For both column and row gaps the property "gap" can be used. */
+    /* gap: 0.2rem 0.5rem */
+
+    /* "grid-template-columns" describes how columns are split in the row.
+    The "repeat" keyword will repeat the second argument as many times as the first argument.
+    "fr" unit means a fraction of the whole, so "1fr" means one part of the whole. */
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    margin: 0;
+    height: 100vh;
+    /* Items alignment in block direction. */
+    align-items: stretch;
+    /* Items alignment in inline direction. */
+    justify-items: stretch
+}
+
+div#first {
+    border: solid green 1px;
+    background: rgba(0, 255, 0, 0.4);
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+div#second {
+    border: solid blue 1px;
+    background: rgba(0, 0, 255, 0.4);
+    /* "grid-column" is a shorthand for "grid-column-start" and "grid-column-end". */ 
+    grid-column: 5 / 8;
+    grid-row: 1 / 3;
+}   
+
+div#third {
+    border: solid purple 1px;
+    background: rgba(128, 0, 128, 0.4);
+    grid-column: 6 / 10;
+    grid-row: 3 / 4;
+    /* Override grid alignment for this item. */
+    align-self: start;
+    /* Override grid justify for this item. */
+    justify-self: center;
+}   
+
+div#fourth {
+    border: solid orange 1px;
+    background: rgba(255, 165, 0, 0.4);
+    grid-column: 10 / 13;
+    grid-row: 3 / 5;
+    align-self: end;
+    justify-self: end;
+}

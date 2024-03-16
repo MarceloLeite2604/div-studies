@@ -1,0 +1,63 @@
+/*
+Definitions:
+    Main axis: In flexbox, the main axis is defined by the direction set by the flex-direction property.
+    Cross axis: In flexbox, the cross axis runs perpendicular to the main axis, therefore if your flex-direction is either row or row-reverse then the cross axis runs down the columns.
+*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    margin: 0;
+    height: 100vh
+}
+
+div#main {
+    display: flex;
+    border: dashed red 1px;
+    /* Direction which elements will be added inside this container. Controls the alignment of items on the cross axis */
+    flex-direction: column;
+    /* Defines how the browser distributes space between and around content items along the main-axis of a flex container, If any item contains "flex-grow" property, then this property is ignored. */
+    justify-content: center;
+    /* When used in a flexbox, it controls the alignment of items on the cross axis.
+    Takes into consideration the section (column or row) which the elements are located.
+    This property has no effect on single line flex containers. */
+    align-items: stretch;
+    /* General alignment of items on the cross axis.
+    Takes into consideration the overall space inside the flexbox. */
+    align-content: space-around;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+div#first {
+    border: solid green 1px;
+    margin: 0.5rem;
+    padding: 0.2rem;
+    /* flex-grow: 2 */
+    height: 42.5%
+}
+
+div#second {
+    border: solid blue 1px;
+    margin: 0.5rem;
+    padding: 0.2rem;
+    /* flex-grow: 1 */
+    height: 42.5%
+}
+
+div#third {
+    border: solid purple 1px;
+    margin: 0.5rem;
+    padding: 0.2rem;
+    /* flex-grow: 1 */
+    height: 42.5%
+}
+
+div#fourth {
+    border: solid orange 1px;
+    margin: 0.5rem;
+    padding: 0.2rem;
+    /* flex-grow: 1 */
+    height: 42.5%
+}
